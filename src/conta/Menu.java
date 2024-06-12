@@ -1,12 +1,24 @@
 package conta;
 
 import java.util.Scanner;
+
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 	public static void main(String[] args) {
 
-		Scanner leia = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
+		
+		// Teste da Classe Conta
+		Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
+		c1.visualizar();
+		c1.sacar(12000.0f);
+		c1.visualizar();
+		c1.depositar(5000.0f);
+		c1.visualizar();
+
+
 
 		int opcao;
 
@@ -33,20 +45,33 @@ public class Menu {
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
 
-			opcao = leia.nextInt();
+			opcao = scanner.nextInt();
 
 			if (opcao == 9) {
 				System.out.println(Cores.TEXT_WHITE_BOLD + Cores.ANSI_BLACK_BACKGROUND
 						+ "\nBanco do Brazil com Z    - O seu Futuro começa aqui!");
 				sobre();
-				leia.close();
+				scanner.close();
 				System.exit(0);
 			}
 
 			switch (opcao) {
 			case 1:
 				System.out.println(Cores.TEXT_WHITE + "Criar Conta\n\n");
-
+				System.out.println("Digite o número da conta:");
+				int numeroConta = scanner.nextInt();
+				System.out.println("Digite o número da agência:");
+				int numeroAgencia = scanner.nextInt();
+				System.out.println("Digite o tipo de conta:");
+				int tipoConta = scanner.nextInt();
+				System.out.println("Digite o nome do titular:");
+				scanner.nextLine();
+				String nomeTitular = scanner.nextLine();
+				System.out.println("Digite o saldo de inicialização:");
+				float saldoInicial = scanner.nextFloat();
+				Conta contaNova = new Conta(numeroConta, numeroAgencia, tipoConta, nomeTitular, saldoInicial);
+				System.out.println("CONTA CRIADA!!");
+				
 				break;
 			case 2:
 				System.out.println(Cores.TEXT_WHITE + "Listar todas as Contas\n\n");
