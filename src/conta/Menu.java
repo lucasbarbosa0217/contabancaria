@@ -1,5 +1,6 @@
 package conta;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import conta.model.Conta;
@@ -18,8 +19,9 @@ public class Menu {
 		c1.depositar(5000.0f);
 		c1.visualizar();
 
+		ArrayList<Conta> listaContas = new ArrayList<>();
 
-
+		listaContas.add(c1);
 		int opcao;
 
 		while (true) {
@@ -71,11 +73,14 @@ public class Menu {
 				float saldoInicial = scanner.nextFloat();
 				Conta contaNova = new Conta(numeroConta, numeroAgencia, tipoConta, nomeTitular, saldoInicial);
 				System.out.println("CONTA CRIADA!!");
-				
+				listaContas.add(contaNova);
+
 				break;
 			case 2:
 				System.out.println(Cores.TEXT_WHITE + "Listar todas as Contas\n\n");
-
+				for (Conta conta : listaContas) {
+					System.out.println(conta);
+				}
 				break;
 			case 3:
 				System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por número\n\n");
