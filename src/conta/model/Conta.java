@@ -1,12 +1,12 @@
 package conta.model;
 
-public class Conta {
-
-	protected int agencia;
+public abstract class Conta {
+	
+	private int numero;
+	private int agencia;
 	private int tipo;
 	private String titular;
 	private float saldo;
-	private int numero;
 
 
 
@@ -83,7 +83,7 @@ public class Conta {
 
 	}
 	
-	public void visualizar() {
+	public  void visualizar() {
 
 		String tipo = "";
 		
@@ -107,4 +107,5 @@ public class Conta {
 
 	}
 
+	
 }
