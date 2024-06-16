@@ -14,7 +14,7 @@ public class Menu {
 
 	
 		// Teste da Classe Conta Corrente
-		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Luquinhas", 10000.0f, 100.0f);
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Lalarcas", 10000.0f, 100.0f);
 		cc1.visualizar();
 		cc1.sacar(12000.0f);
 		cc1.visualizar();
