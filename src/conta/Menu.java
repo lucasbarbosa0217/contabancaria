@@ -12,26 +12,8 @@ public class Menu {
 
 		Scanner scanner = new Scanner(System.in);
 
-	
-		// Teste da Classe Conta Corrente
-		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Lalarcas", 10000.0f, 100.0f);
-		cc1.visualizar();
-		cc1.sacar(12000.0f);
-		cc1.visualizar();
-		cc1.depositar(5000.0f);
-		cc1.visualizar();
-		// Teste da Classe Conta Corrente
-		ContaPoupanca cp1 = new ContaPoupanca(3, 123, 1, "Fernando", 10000.0f, 15);
-		cp1.visualizar();
-		cp1.sacar(12000.0f);
-		cp1.visualizar();
-		cp1.depositar(5000.0f);
-		cp1.visualizar();
 
 		ArrayList<Conta> listaContas = new ArrayList<>();
-
-		listaContas.add(cc1);
-		listaContas.add(cp1);
 
 		int opcao;
 
