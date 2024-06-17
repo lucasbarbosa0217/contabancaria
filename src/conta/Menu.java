@@ -110,7 +110,7 @@ public class Menu {
 
 				break;
 			case 8:
-				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
+				System.out.println(Cores.TEXT_WHITE + "T ransferência entre Contas\n\n");
 
 				break;
 			default:
