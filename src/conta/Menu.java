@@ -15,9 +15,9 @@ public class Menu {
 
 		ContaController contas = new ContaController();
 
-		int opcao, numero = 0, agencia, tipo, aniversario;
+		int opcao, numero = 0, agencia, tipo, aniversario, numeroDestino;
 		String titular;
-		float saldo, limite;
+		float saldo, limite, valor;
 
 		System.out.println("\nCriar Contas\n");
 
@@ -87,7 +87,7 @@ public class Menu {
 				do {
 					System.out.println("Digite o Tipo da Conta (1-CC ou 2-CP): ");
 					tipo = scanner.nextInt();
-				} while (tipo < 1 && tipo > 2);
+				} while (tipo < 1 || tipo > 2);
 
 				System.out.println("Digite o Saldo da Conta (R$): ");
 				saldo = scanner.nextFloat();
@@ -180,17 +180,47 @@ public class Menu {
 			    break;
 
 			case 6:
-				System.out.println("\n Sacar");
+				System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
+
+				System.out.println("Digite o Numero da conta: ");
+				numero = scanner.nextInt();
+
+				do {
+					System.out.println("Digite o Valor do Saque (R$): ");
+					valor = scanner.nextFloat();
+				} while (valor <= 0);
+
+				contas.sacar(numero, valor);
 
 				keyPress();
-				break;
 			case 7:
-				System.out.println("\n Depositar");
+				System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
+
+				System.out.println("Digite o Numero da conta: ");
+				numero = scanner.nextInt();
+
+				do {
+					System.out.println("Digite o Valor do Depósito (R$): ");
+					valor = scanner.nextFloat();
+				} while (valor <= 0);
+
+				contas.depositar(numero, valor);
 
 				keyPress();
-				break;
 			case 8:
-				System.out.println("\n Transferir");
+				System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
+
+				System.out.println("Digite o Numero da Conta de Origem: ");
+				numero = scanner.nextInt();
+				System.out.println("Digite o Numero da Conta de Destino: ");
+				numeroDestino = scanner.nextInt();
+
+				do {
+					System.out.println("Digite o Valor da Transferência (R$): ");
+					valor = scanner.nextFloat();
+				} while (valor <= 0);
+
+				contas.transferir(numero, numeroDestino, valor);
 
 				keyPress();
 				break;
